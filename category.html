@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>慢慢买比价网--手机版</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- rem -->
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" type="text/css" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 公共样式 -->
+    <link rel="stylesheet/less" href="less/base.less">
+    <link rel="stylesheet/less" href="less/category.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 脑壳 -->
+    <header id="header">
+        <a href="index.html" title="" class="logo">
+            <img src="http://static.manmanbuy.com/m/img/mlogo.png" alt="">
+        </a>
+        <form action="#">
+            <i class="fa fa-search"></i>
+            <input type="search" name="" placeholder="商品比价、查历史价">
+        </form>
+        <a href="#" title="" class="download">
+            下载
+        </a>
+    </header>
+    <!-- 身体 -->
+    <main id="main">
+
+        <ul class="mui-table-view">
+
+            <li class="mui-table-view-cell mui-collapse categoryBox">
+                <a class="mui-navigate-right title" href="#" data-id="{{value.titleId}}"><strong>{{value.title}}</strong></a>
+
+            </li>
+        </ul>
+
+        <div class="ranking">
+            <a href="#"><span>品牌排行</span>
+            <img src="images/more.png" alt=""></a>
+        </div>
+    </main>
+
+    <!-- jio -->
+    <footer id="footer">
+            <div class="foot_top">
+                <a href="login.aspx">登录</a> <a href="reg.aspx">注册</a>
+                <a href="#" class="btn-back" >
+                    <i class="fa fa-arrow-up"></i>返回顶部</a>
+            </div>
+            <div class="foot_bottom">
+                <p>
+                    <a href="#" style="color: #f85000;">手机APP下载</a>
+                    <a href="#" style="color:#8f8f94">
+                        慢慢买手机版</a> -- 掌上比价平台</p>
+                <p>
+                    m.manmanbuy.com
+                </p>
+            </div>
+        </footer>
+
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- 公共组件 -->
+    <script src="js/tool.js"></script>
+    <!-- 你自己的js文件 -->
+    <script src="js/category.js"></script>
+    <script id="titleTpl" type="text/html">
+        {{each result as value index}}
+        <li class="mui-table-view-cell mui-collapse success">
+            <a class="mui-navigate-right title" href="#" data-id="{{value.titleId}}"><strong>{{value.title}}</strong></a>
+
+        </li>
+    {{/each}}
+    </script>
+    <script id="secondary" type="text/html">
+        <ul class="mui-collapse-content secondary">
+            {{each result as value}}
+                <li><a href="productList.html?categoryid={{value.categoryId}}">{{value.category}}</a></li>
+            {{/each }}
+            </ul>
+    </script>
+</body>
+
+
+
+</html>
